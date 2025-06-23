@@ -22,7 +22,7 @@ class App:
         angle_step = math.radians(int(360/size))
         center_x = 320
         center_y = 240
-        distance = 48
+        distance = 8*size
 
         poses = {}
 

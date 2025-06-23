@@ -3,17 +3,29 @@ from Graph import Graph
 
 def main():
     g = Graph()
-    g.addVertices(['A', 'B', 'C', 'D', 'E'])
 
-    g.addAdjacency('A', ('B', 3))
-    g.addAdjacency('A', ('C', 2))
-    g.addAdjacency('A', ('D', 8))
+    g.addVertices(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'])
 
-    g.addAdjacency('D', ('C', 4))
-    g.addAdjacency('D', ('B', 7))
+    g.addAdjacency('a', ('b', 3))
+    g.addAdjacency('a', ('c', 9))
+    g.addAdjacency('a', ('d', 2))
 
-    g.addAdjacency('E', ('D', 6))
-    g.addAdjacency('E', ('C', 9))
+    g.addAdjacency('b', ('c', 4))
+    g.addAdjacency('c', ('d', 6))
+    g.addAdjacency('c', ('e', 1))
+    g.addAdjacency('c', ('f', 2))
+    g.addAdjacency('b', ('e', 5))
+    g.addAdjacency('g', ('d', 9))
+    g.addAdjacency('f', ('g', 1))
+    g.addAdjacency('f', ('h', 5))
+    g.addAdjacency('e', ('h', 5))
+    g.addAdjacency('h', ('j', 5))
+    g.addAdjacency('f', ('j', 9))
+    g.addAdjacency('f', ('i', 6))
+    g.addAdjacency('g', ('i', 2))
+    g.addAdjacency('i', ('j', 3))
+
+
 
     app = App(g)
 
