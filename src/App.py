@@ -82,5 +82,5 @@ class App:
             id = o['id']
             self.canvas.create_oval(x - (oval_size/2), y-(oval_size/2), x+(oval_size/2), y+(oval_size/2), fill='white')
             self.canvas.create_text(x, y, text=id)
-        self.root.after(1, self.update)
+        
 

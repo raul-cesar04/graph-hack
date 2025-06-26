@@ -1,7 +1,10 @@
 from App import App
 from Graph import Graph
+from TableTest import TableTest
+import threading
 
 def main():
+
     g = Graph()
 
     g.addVertices(['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j'])
@@ -28,8 +31,14 @@ def main():
 
 
     app = App(g)
+    
+    t2 = threading.Thread(target=lambda:TableTest())
 
+    t2.start()
     app.start()
+    t2.join()
+
+    
     pass
 
 if __name__ == "__main__":
