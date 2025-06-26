@@ -31,16 +31,13 @@ def main():
 
 
 
-    # app = App(g)
+    app = App(g)
     
 
     start = g.findVertice('a')
     tData = Dijkstra.run(g, start)
-    print(tData)
     TableTest(tData)
-    # t2.start()
-    # app.start()
-    # t2.join()
+    app.start()
 
     
     pass
