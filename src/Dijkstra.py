@@ -1,4 +1,6 @@
 from Graph import Graph
+from TableTest import TableData
+
 class Dijkstra:
     def getMinDist(vertices: dict, queue: list):
         minDist, minKey = None, None
@@ -10,7 +12,8 @@ class Dijkstra:
                 minDist = vertices[v]
 
         return (minKey, minDist)
-    def run(g: Graph, s: Graph.Vertice)->None:
+    def run(g: Graph, s: Graph.Vertice)->dict:
+        tableData = TableData(g.vertices)
         dist = {}
         S = []
         Q = []
@@ -27,6 +30,7 @@ class Dijkstra:
             minKey, minDist = Dijkstra.getMinDist(dist, Q)
             S.append(minKey)
             Q.remove(minKey)
+            tableData.step(", ".join(S), minKey, minDist)
 
             current = g.findVertice(minKey)
             for v in current.neighbours:
@@ -35,3 +39,4 @@ class Dijkstra:
                     dist[vData.id] = dist[current.id] + vDist
             
         print('Final S: ',S)
+        return tableData.build()

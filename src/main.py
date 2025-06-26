@@ -31,14 +31,15 @@ def main():
 
 
 
-    app = App(g)
+    # app = App(g)
     
-    t2 = threading.Thread(target=lambda:TableTest())
 
-    # t2.start()
     start = g.findVertice('a')
-    Dijkstra.run(g, start)
-    app.start()
+    tData = Dijkstra.run(g, start)
+    print(tData)
+    TableTest(tData)
+    # t2.start()
+    # app.start()
     # t2.join()
 
     
