@@ -1,6 +1,7 @@
 from App import App
 from Graph import Graph
 from TableTest import TableTest
+from Dijkstra import Dijkstra
 import threading
 
 def main():
@@ -34,9 +35,11 @@ def main():
     
     t2 = threading.Thread(target=lambda:TableTest())
 
-    t2.start()
+    # t2.start()
+    start = g.findVertice('a')
+    Dijkstra.run(g, start)
     app.start()
-    t2.join()
+    # t2.join()
 
     
     pass

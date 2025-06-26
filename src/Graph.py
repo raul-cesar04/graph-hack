@@ -41,6 +41,4 @@ class Graph:
         v.addNeighbour(newNeighbour, w)
         newNeighbour.addNeighbour(v, w)
         self.adjacencies.append((newNeighbour.id, v.id, w))
-
-            
     pass
