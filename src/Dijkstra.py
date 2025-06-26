@@ -13,7 +13,6 @@ class Dijkstra:
 
         return (minKey, minDist)
     def run(g: Graph, s: Graph.Vertice)->dict:
-        tableData = TableData(g.vertices)
         dist = {}
         S = []
         Q = []
@@ -22,6 +21,7 @@ class Dijkstra:
             dist[v.id] = float('inf')
             Q.append(v.id)
 
+        tableData = TableData(dist)
         dist[s.id] = 0  
 
         
@@ -30,7 +30,7 @@ class Dijkstra:
             minKey, minDist = Dijkstra.getMinDist(dist, Q)
             S.append(minKey)
             Q.remove(minKey)
-            tableData.step(", ".join(S), minKey, minDist)
+            tableData.step(", ".join(S), minKey, dist)
 
             current = g.findVertice(minKey)
             for v in current.neighbours:

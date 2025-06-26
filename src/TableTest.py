@@ -20,13 +20,14 @@ class TableData:
         self.vertices = {}
 
         for v in vertices:
-            self.vertices[v.id] = []
+            self.vertices[v] = [vertices[v]]
 
-    def step(self, conjuntoSStr: str, verticeId, currentDist: float):
+    def step(self, conjuntoSStr: str, verticeId, currentDist: dict):
         self.Passos.append(self.passo)
         self.ConjuntoS.append(conjuntoSStr)
         
-        self.vertices[verticeId].append(currentDist)
+        for v in currentDist:
+            self.vertices[v].append(currentDist[v])
         self.passo += 1
 
     def build(self):
@@ -36,7 +37,7 @@ class TableData:
         }
 
         for v in self.vertices:
-            data[v] = [0]*len(data['Passo'])
+            data[v] = (self.vertices[v])[1:]
 
         
         return data
