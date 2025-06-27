@@ -5,9 +5,9 @@ import matplotlib
 import csv
 
 class TableTest:
-    def __init__(self, tData: dict):
+    def __init__(self, tData: dict, title: str):
         df = pd.DataFrame(tData)
-        df.to_csv('my_file.csv', index=False)
+        df.to_csv(f'{title}.csv', index=False)
         
         
         

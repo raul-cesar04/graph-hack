@@ -2,7 +2,7 @@ from App import App
 from Graph import Graph
 from TableTest import TableTest
 from Dijkstra import Dijkstra
-import threading
+from Prim import Prim
 
 def main():
 
@@ -35,8 +35,13 @@ def main():
     
 
     start = g.findVertice('a')
-    tData = Dijkstra.run(g, start)
-    TableTest(tData)
+
+    dijkstraResult = Dijkstra.run(g, start)
+    dijkstraResultTable = TableTest(dijkstraResult, 'G2_Dijkstra')
+
+    primResult = Prim.run(g, start)
+    primResultTable = TableTest(primResult, 'G2_Prim')
+
     app.start()
 
     
